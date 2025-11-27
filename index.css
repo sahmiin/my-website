@@ -1,24 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Playwrite+IN:wght@100..400&family=Playwrite+NL:wght@100..400&display=swap');
+
+html {
+    scroll-behavior: smooth;
+}
+
 * {
     text-align: center;
 }
 
 body {
-  background: linear-gradient(#ffe9f3, #ffdff1);
+    background: linear-gradient(#ffe9f3, #eacdd5);
+    cursor: url('cute_cursor.png'), auto;
+    font-family: sans-serif;
 }
 
+body::before {
+    content: "";
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: url('IMG_3724.JPG') repeat;
+    opacity: 0.15;
+    z-index: -1;
+}
+
+p {
+    font-size: 26px;
+}
 
 h1 {
+    position: relative;
+    display: inline-block;
+    font-size: 65px;
+    letter-spacing: 3px;
     color: rgb(233, 156, 195);
+    margin-bottom: -3px;
+        text-shadow: 
+    0 0 5px #ffd7eb,
+    0 0 10px #ffb6d9;
+    animation: floaty 3s ease-in-out infinite;
 }
 
+/* h1::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 100%;
+    height: 6px;
+    background: #ffd1e8;
+    border-radius: 10px;
+} */
+
+h2.subheading {
+    color: rgb(193, 146, 190);
+    font-family: "Playwrite IN" !important;
+    font-size: 45px;
+    font-weight: 1000;
+    margin-top: -5px;
+}
+
+
 nav {
-    background-color: rgb(255, 240, 245);
     text-align: right;
     font-size: 30px;
 }
 
 section {
-    padding: 80px 20px;
+    background: white;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    width: 60%;
+    margin: 40px auto;
 }
 
 footer {
@@ -31,10 +85,72 @@ footer {
 }
 
 nav a {
+    position: sticky;
     color: rgb(161, 128, 192);
     font-weight: bold;
 }
 
 nav a:hover {
-    color: rgb(219, 144, 157);
+    color: #d85475bd;
+    text-shadow: 0 0 8px #ffd4e8;
+}
+
+.container {
+    max-width: 800px;
+    margin: auto;
+    padding: 15px;
+}
+
+@keyframes floaty {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-6px); }
+    100% { transform: translateY(0); }
+}
+
+/* --- ABOUT ME SECTION STYLING --- */
+
+.about-me {
+    background: white;
+    width: 60%;
+    margin: 60px auto;
+    padding: 30px;
+    border-radius: 25px;
+    box-shadow: 0 5px 12px rgba(0,0,0,0.05);
+    font-family: sans-serif;
+}
+
+.about-title {
+    font-size: 28px;
+    color: rgb(233, 156, 195);
+    text-shadow:
+        0 0 5px #ffd7eb,
+        0 0 10px #ffb6d9;
+    margin-bottom: 20px;
+}
+
+.about-intro {
+    font-size: 15px;
+    margin-bottom: 25px;
+    color: #6a4a5f;
+    line-height: 1.5;
+}
+
+.about-info {
+    background: #ffe9f3;
+    padding: 15px 20px;
+    margin: 15px 0;
+    border-radius: 18px;
+    text-align: left;
+}
+
+.about-info h3 {
+    color: #d46fa4;
+    margin-bottom: 5px;
+    font-size: 22px;
+}
+
+.about-info p,
+.about-info li {
+    font-size: 17px;
+    color: #6a4a5f;
 }
